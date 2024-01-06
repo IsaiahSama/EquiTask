@@ -1,40 +1,31 @@
-<head>
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
-  />
-  <title>New Task</title>
-</head>
-<body>
-  <div class="content mx-2">
+<section id="mainContent">
+  <div class="content">
     <h1>Add a new task</h1>
   </div>
-  <section id="mainContent">
-    <div class="mx-2">
-      <form action="">
-        <div class="field">
-          <label class="label" for="name">Task Name</label>
-          <input
-            class="input"
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Enter name of task"
-          />
-        </div>
-        <div class="field">
-          <label class="label" for="desc">Task Description</label>
-          <input
-            class="input"
-            type="text"
-            name="desc"
-            id="desc"
-            placeholder="Briefly describe the task"
-          />
-        </div>
+  <div>
+    <form action="">
+      <div class="field">
+        <label class="label" for="name">Task Name</label>
+        <input
+          class="input"
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Enter name of task"
+        />
+      </div>
+      <div class="field">
+        <label class="label" for="desc">Task Description</label>
+        <input
+          class="input"
+          type="text"
+          name="desc"
+          id="desc"
+          placeholder="Briefly describe the task"
+        />
+      </div>
 
-        <input type="submit" value="Add Task" class="button is-primary" />
-      </form>
-    </div>
-  </section>
-</body>
+      <input type="submit" value="Add Task" class="button is-primary" />
+    </form>
+  </div>
+</section>

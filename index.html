@@ -3,12 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
     <title>EquiTask</title>
   </head>
-  <body>
+  <body class="mx-2">
+    <section id="buttonContainer">
+      <div class="buttons is-flex is-justify-content-space-between mb-4 mx-2">
+        <button class="button is-primary is-light">Add Task</button>
+        <button class="button is-info is-light">Home</button>
+        <button class="button is-warning is-light">Spread Tasks</button>
+      </div>
+    </section>
     <section id="content">
       <!-- Content will go in here -->
     </section>
   </body>
   <script src="scripts/index.js"></script>
+  <script
+    src="https://unpkg.com/htmx.org@1.9.10"
+    integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
+    crossorigin="anonymous"
+  ></script>
 </html>
