@@ -7,17 +7,45 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
+    <link rel="stylesheet" href="/styles/style.css" />
     <title>EquiTask</title>
   </head>
-  <body class="mx-2">
+  <body
+    class="mx-2"
+    hx-trigger="load"
+    hx-get="home.html"
+    hx-target="#content"
+    hx-swap="innerHTML transition:true"
+  >
     <section id="buttonContainer">
       <div class="buttons is-flex is-justify-content-space-between mb-4 mx-2">
-        <button class="button is-primary is-light">Add Task</button>
-        <button class="button is-info is-light">Home</button>
-        <button class="button is-warning is-light">Spread Tasks</button>
+        <button
+          class="button is-primary is-light"
+          hx-target="#content"
+          hx-get="addTask.html"
+          hx-swap="innerHTML transition:true"
+        >
+          Add Task
+        </button>
+        <button
+          class="button is-info is-light"
+          hx-target="#content"
+          hx-get="home.html"
+          hx-swap="innerHTML transition:true"
+        >
+          Home
+        </button>
+        <button
+          class="button is-warning is-light"
+          hx-target="#content"
+          hx-get="distribute.html"
+          hx-swap="innerHTML transition:true"
+        >
+          Spread Tasks
+        </button>
       </div>
     </section>
-    <section id="content">
+    <section id="content" class="slide-it">
       <!-- Content will go in here -->
     </section>
   </body>
