@@ -1,8 +1,8 @@
 class Task {
-  constructor(name, desc, day) {
+  constructor(name, desc) {
     this.name = name;
     this.desc = desc;
-    this.day = day;
+    this.day = null;
     this.completed = false;
   }
 
@@ -11,7 +11,9 @@ class Task {
   };
 
   deleteTask = function () {
-    this.day.deleteTask(this.name);
+    if (this.day) {
+      this.day.deleteTask(this.name);
+    }
     delete this;
   };
 
