@@ -19,5 +19,5 @@ const getAllItemsFromStorage = () => {
     }
   }
 
-  return { tasks: {} };
+  return {};
 };
