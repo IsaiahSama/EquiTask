@@ -50,7 +50,7 @@ class Task {
 
     // Putting it all together
     label.appendChild(inp);
-    label.innerText = this.name;
+    label.appendChild(document.createTextNode(" " + this.name + " "));
     container.appendChild(label);
 
     return container;
