@@ -6,5 +6,5 @@ addTaskForm.addEventListener("submit", (ev) => {
   let taskDesc = document.querySelector("#taskDesc").value;
 
   task = new Task(taskName, taskDesc);
-  getTaskFromStorage(taskName);
+  saveTaskInStorage(task);
 });
