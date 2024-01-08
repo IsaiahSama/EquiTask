@@ -15,7 +15,10 @@ const getAllItemsFromStorage = () => {
 
 const saveDayInStorage = (day) => {
   let allDays = getAllDaysFromStorage();
-  allDays[day.name] = day.tasks;
+  allDays[day.name] = [];
+  for (let task of day.tasks) {
+    allDays[day.name].push(task);
+  }
   localStorage.setItem("days", JSON.stringify(allDays));
 };
 
