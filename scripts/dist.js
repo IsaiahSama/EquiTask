@@ -8,7 +8,7 @@ function loadSelectableTasks() {
   let elements = [];
   for (let key of Object.keys(allTasks)) {
     let t = new Task(key, allTasks[key], null);
-    elements.push(t.getAsFormHTML());
+    elements.push(t.getCheckboxHTML());
     ids.push(key);
   }
 
@@ -23,7 +23,24 @@ function loadSelectableTasks() {
   }
 }
 
+function loadSelectableDays() {
+  const cont = document.getElementById("dayContainer");
+
+  for (let day of [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ]) {
+    cont.appendChild(createCheckboxElement(day));
+  }
+}
+
 loadSelectableTasks();
+loadSelectableDays();
 
 function getChecked(ids) {
   const elements = [];
