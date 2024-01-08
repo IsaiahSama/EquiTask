@@ -10,12 +10,31 @@ const getTaskFromStorage = (taskName) => {
 };
 
 const getAllItemsFromStorage = () => {
-  const storedTasks = localStorage.getItem("tasks");
+  return getAllFromStorage("tasks");
+};
 
-  if (storedTasks) {
-    const parsedTasks = JSON.parse(storedTasks);
-    if (parsedTasks && Object.keys(parsedTasks).length > 0) {
-      return parsedTasks;
+const saveDayInStorage = (day) => {
+  let allDays = getAllDaysFromStorage();
+  allDays[day.name] = day.tasks;
+  localStorage.setItem("days", JSON.stringify(allDays));
+};
+
+const getDayFromStorage = (dayName) => {
+  let allDays = getAllDaysFromStorage();
+  return allDays[dayName] || {};
+};
+
+const getAllDaysFromStorage = () => {
+  return getAllFromStorage("days");
+};
+
+const getAllFromStorage = (key) => {
+  const storedData = localStorage.getItem(key);
+
+  if (storedData) {
+    const parsedData = JSON.parse(storedData);
+    if (parsedData && Object.keys(parsedData).length > 0) {
+      return parsedData;
     }
   }
 
