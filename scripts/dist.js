@@ -1,5 +1,14 @@
 let form = document.getElementById("distForm");
 let ids = [];
+let days = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday",
+];
 
 function loadSelectableTasks() {
   const cont = document.getElementById("taskContainer");
@@ -26,15 +35,7 @@ function loadSelectableTasks() {
 function loadSelectableDays() {
   const cont = document.getElementById("dayContainer");
 
-  for (let day of [
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-    "Sunday",
-  ]) {
+  for (let day of days) {
     cont.appendChild(createCheckboxElement(day));
   }
 }
@@ -51,7 +52,15 @@ function getChecked(ids) {
   return elements;
 }
 
+function handleDistribution(tasks, days) {
+  // Get the days objects
+  // Shuffle the tasks
+  // Iterate through the tasks, adding them to the days one by one in a cycle
+  // Save the updated days objects
+}
+
 form.addEventListener("submit", (ev) => {
   ev.preventDefault();
-  let tasks = getChecked(ids);
+  let selectedTasks = getChecked(ids);
+  let selectedDays = getChecked(days);
 });
