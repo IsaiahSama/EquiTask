@@ -4,9 +4,13 @@ function renderTable() {
   for (let day of Object.keys(allDays)) {
     if (allDays[day].length > longest) longest = allDays[day].length;
   }
-
-  let row = 0;
   let tbody = document.getElementById("tableBody");
+  if (longest == 0) {
+    tbody.innerHTML =
+      "<tr>No tasks to show! Press the Spread Task button to distribute some!</tr>";
+    return;
+  }
+  let row = 0;
   while (row < longest) {
     let tr = document.createElement("tr");
 
