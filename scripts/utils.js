@@ -107,6 +107,7 @@ const hide = (element) => {
 };
 
 const show = (element) => {
+  element.classList.remove("nonExistent");
   element.classList.add("visible");
   element.classList.remove("hidden");
 };
