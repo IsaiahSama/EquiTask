@@ -9,7 +9,9 @@ class Day {
   };
 
   deleteTask = function (task) {
-    this.tasks = this.tasks.filter((t) => t != task);
+    let tasks = getDayFromStorage(this.name);
+    this.tasks = tasks.filter((t) => t != task);
+    saveDayInStorage(this);
   };
 
   getAsHTML = function () {

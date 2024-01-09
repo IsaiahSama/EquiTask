@@ -10,11 +10,11 @@ class Task {
     this.completed = !this.completed;
   };
 
-  deleteTask = function () {
+  deleteTask = function (name) {
     if (this.day) {
       this.day.deleteTask(this.name);
     }
-    delete this;
+    deleteTaskFromStorage(this.name);
   };
 
   updateTask = function (name, desc, day) {
@@ -33,6 +33,7 @@ class Task {
     let td = document.createElement("td");
     td.innerHTML = this.name;
     td.title = this.desc;
+    td.onclick = () => this.deleteTask(this.name);
     return td;
   };
 }

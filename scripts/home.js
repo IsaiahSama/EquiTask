@@ -14,7 +14,7 @@ function renderTable() {
       if (day in allDays && allDays[day].length > 0) {
         let task_name = allDays[day].pop();
         let task_data = getTaskFromStorage(task_name);
-        let task = new Task(task_name, task_data, day);
+        let task = new Task(task_name, task_data, new Day(day, []));
         tr.appendChild(task.getTableHTML());
       } else {
         tr.appendChild(document.createElement("td"));

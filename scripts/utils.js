@@ -19,6 +19,12 @@ const getTaskFromStorage = (taskName) => {
   return allTasks[taskName] || {};
 };
 
+const deleteTaskFromStorage = (taskName) => {
+  let allTasks = getAllItemsFromStorage();
+  delete allTasks[taskName];
+  localStorage.setItem("tasks", JSON.stringify(allTasks));
+};
+
 const getAllItemsFromStorage = () => {
   return getAllFromStorage("tasks");
 };
@@ -29,6 +35,7 @@ const saveDayInStorage = (day) => {
   for (let task of day.tasks) {
     allDays[day.name].push(task);
   }
+  console.log(allDays, allDays[day.name]);
   localStorage.setItem("days", JSON.stringify(allDays));
 };
 
