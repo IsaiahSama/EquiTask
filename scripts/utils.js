@@ -54,7 +54,7 @@ const getAllFromStorage = (key) => {
   return {};
 };
 
-const createCheckboxElement = (labelValue) => {
+const createCheckboxElement = (labelValue, desc) => {
   /*  <div class="check-container">
             <label for="task1" class="checkbox">
                 <input type="checkbox" name="task1" id="task1" />
@@ -70,6 +70,7 @@ const createCheckboxElement = (labelValue) => {
   const label = document.createElement("label");
   label.setAttribute("for", labelValue);
   label.className = "checkbox";
+  label.title = desc;
 
   // Creating the input box
   const inp = document.createElement("input");

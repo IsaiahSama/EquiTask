@@ -26,7 +26,7 @@ class Task {
   getCheckboxHTML = function () {
     // Will return some HTML for rendering
 
-    return createCheckboxElement(this.name);
+    return createCheckboxElement(this.name, this.desc);
   };
 
   getTableHTML = function () {
