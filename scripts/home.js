@@ -20,7 +20,8 @@ function renderTable() {
         tr.appendChild(document.createElement("td"));
       }
     }
-    tbody.appendChild(tr);
+
+    setTimeout(() => tbody.appendChild(tr), 500 * row);
     row += 1;
   }
 }
