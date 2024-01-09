@@ -5,7 +5,7 @@ class Day {
   }
 
   addTask = function (task) {
-    this.tasks.append(task);
+    this.tasks.push(task);
   };
 
   deleteTask = function (task) {
