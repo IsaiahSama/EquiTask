@@ -1,3 +1,13 @@
+let days = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday",
+];
+
 const saveTaskInStorage = (task) => {
   let allTasks = getAllItemsFromStorage();
   allTasks[task.name] = task.desc;

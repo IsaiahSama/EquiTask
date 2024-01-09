@@ -1,14 +1,5 @@
-let form = document.getElementById("distForm");
-let ids = [];
-let days = [
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-  "Sunday",
-];
+form = document.getElementById("distForm");
+ids = [];
 
 function loadSelectableTasks() {
   const cont = document.getElementById("taskContainer");
