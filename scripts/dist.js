@@ -54,13 +54,37 @@ function getChecked(ids) {
 
 function handleDistribution(tasks, days) {
   // Get the days objects
+  let dayObjects = [];
+  for (let day of days) {
+    let dayEntry = getDayFromStorage(day);
+    if (Object.keys(dayEntry) == 0) {
+      dayObjects.push(new Day(day, []));
+    } else {
+      dayObjects.push(new Day(day, dayEntry[day]));
+    }
+  }
   // Shuffle the tasks
+  tasks = shuffleArray(tasks);
+
   // Iterate through the tasks, adding them to the days one by one in a cycle
+  let dayIndex = 0;
+  console.log(tasks);
+  for (let task of tasks) {
+    console.log(dayObjects, dayObjects[dayIndex]);
+    dayObjects[dayIndex].addTask(task.name);
+    dayIndex += 1;
+    if (dayIndex >= dayObjects.length) dayIndex = 0;
+  }
+
   // Save the updated days objects
+
+  for (let day of dayObjects) saveDayInStorage(day);
 }
 
 form.addEventListener("submit", (ev) => {
   ev.preventDefault();
   let selectedTasks = getChecked(ids);
   let selectedDays = getChecked(days);
+
+  handleDistribution(selectedTasks, selectedDays);
 });
