@@ -9,7 +9,7 @@ class Day {
   };
 
   deleteTask = function (task) {
-    this.tasks = this.tasks.filter((t) => t.name != task.name);
+    this.tasks = this.tasks.filter((t) => t != task);
   };
 
   getAsHTML = function () {
