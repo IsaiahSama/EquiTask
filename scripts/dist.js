@@ -56,11 +56,11 @@ function handleDistribution(tasks, days) {
   // Get the days objects
   let dayObjects = [];
   for (let day of days) {
-    let dayEntry = getDayFromStorage(day);
+    let dayEntry = getDayFromStorage(day.id);
     if (Object.keys(dayEntry) == 0) {
-      dayObjects.push(new Day(day, []));
+      dayObjects.push(new Day(day.id, []));
     } else {
-      dayObjects.push(new Day(day, dayEntry[day]));
+      dayObjects.push(new Day(day.id, dayEntry[day.id]));
     }
   }
   // Shuffle the tasks
