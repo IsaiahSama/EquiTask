@@ -43,5 +43,9 @@
 }
 
 .hidden {
-  display: none;
+  animation: fade-out 1s forwards ease-in;
+}
+
+.visible {
+  animation: fade-in 1s forwards ease-in;
 }

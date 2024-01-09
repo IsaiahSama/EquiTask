@@ -15,7 +15,6 @@ addTaskForm.addEventListener("submit", (ev) => {
   task = new Task(taskName, taskDesc, null);
   saveTaskInStorage(task);
   setTimeout(() => {
-    infoBox.innerHTML = "";
     hide(infoBox);
   }, 3000);
 });
