@@ -49,3 +49,7 @@
 .visible {
   animation: fade-in 1s forwards ease-in;
 }
+
+.notif {
+  text-align: center;
+}

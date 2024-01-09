@@ -9,7 +9,7 @@ addTaskForm.addEventListener("submit", (ev) => {
   document.querySelector("#taskDesc").value = "";
 
   let infoBox = document.querySelector("#taskInfoBox");
-  infoBox.innerHTML = "Success!";
+  infoBox.innerHTML = "Successfully added task!";
   show(infoBox);
 
   task = new Task(taskName, taskDesc, null);

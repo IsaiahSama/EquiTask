@@ -76,4 +76,10 @@ form.addEventListener("submit", (ev) => {
   let selectedDays = getChecked(days);
 
   handleDistribution(selectedTasks, selectedDays);
+  let infoBox = document.querySelector("#distInfoBox");
+  infoBox.innerHTML = "Successfully distributed tasks";
+  show(infoBox);
+  setTimeout(() => {
+    hide(infoBox);
+  }, 3000);
 });
