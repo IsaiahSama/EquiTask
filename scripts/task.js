@@ -28,4 +28,11 @@ class Task {
 
     return createCheckboxElement(this.name);
   };
+
+  getTableHTML = function () {
+    let td = document.createElement("td");
+    td.innerHTML = this.name;
+    td.title = this.desc;
+    return td;
+  };
 }
