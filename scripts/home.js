@@ -1,4 +1,4 @@
-const renderTable = () => {
+function renderTable() {
   let allDays = getAllDaysFromStorage();
   let longest = 0;
   for (let day of Object.keys(allDays)) {
@@ -23,6 +23,6 @@ const renderTable = () => {
     tbody.appendChild(tr);
     row += 1;
   }
-};
+}
 
 setTimeout(renderTable, 1000);
