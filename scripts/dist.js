@@ -51,7 +51,7 @@ function handleDistribution(tasks, days) {
     if (Object.keys(dayEntry) == 0) {
       dayObjects.push(new Day(day.id, []));
     } else {
-      dayObjects.push(new Day(day.id, dayEntry[day.id]));
+      dayObjects.push(new Day(day.id, dayEntry));
     }
   }
   // Shuffle the tasks
@@ -59,9 +59,7 @@ function handleDistribution(tasks, days) {
 
   // Iterate through the tasks, adding them to the days one by one in a cycle
   let dayIndex = 0;
-  console.log(tasks);
   for (let task of tasks) {
-    console.log(dayObjects, dayObjects[dayIndex]);
     dayObjects[dayIndex].addTask(task.name);
     dayIndex += 1;
     if (dayIndex >= dayObjects.length) dayIndex = 0;
