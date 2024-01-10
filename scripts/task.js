@@ -11,6 +11,12 @@ class Task {
   };
 
   deleteTask = function (name) {
+    let resp = prompt(
+      `Do you want to delete ${name}?\nDescription: ${this.desc}\n Leave blank if no. Put something in the box below if yes!`
+    );
+    if (resp.length == 0) {
+      return false;
+    }
     if (this.day) {
       this.day.deleteTask(this.name);
     }
